@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ECG Rhythm Trainer</title>
+<meta name="description" content="Learn to read heart rhythms. Every answer shows the proof on the trace, and the app trains the rhythms you confuse.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#FBF4F2;--fg:#1B1F2A;--paper:#FFFFFF;--line:#EBD5D1;--grid:#F3CFCB;--accent:#C8102E;--muted:#4A3F3D;--dark:#1B1F2A;--dark-fg:#FBF4F2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:17px;line-height:1.55}
+a{color:#0F6B6E}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.row{display:flex;flex-wrap:wrap;gap:40px}
+.col{flex:1 1 360px;min-width:0}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;margin:0;text-wrap:balance}
+h1{font-weight:800;font-size:clamp(36px,6vw,56px);line-height:1.04;letter-spacing:-0.025em}
+h2{font-weight:800;font-size:clamp(28px,4vw,36px);letter-spacing:-0.02em}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:14px 24px;border-radius:6px}
+.btn-red{background:var(--accent);color:#fff}
+.btn-dark{background:var(--dark);color:var(--dark-fg);padding:12px 20px}
+nav{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding-top:24px}
+.logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px}
+.hero{padding-top:64px;padding-bottom:56px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:24px}
+.card{background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px;border:1px solid #E4B8B3;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.cardhead{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6B2E2A}
+.band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.section{padding-top:64px;padding-bottom:64px}
+.pill{border:1px solid var(--fg);border-radius:999px;padding:8px 16px;font-weight:600}
+.join{background:var(--dark);color:var(--dark-fg)}
+footer{padding-top:40px;padding-bottom:56px;font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:12px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav>
+<div class="logo">ECG Rhythm Trainer</div>
+<a class="btn btn-dark" href="#join">Join the waitlist</a>
+</nav>
+
+<div class="row hero">
+<div class="col stack">
+<div class="eyebrow">For nurses, paramedics and medical students</div>
+<h1>Learn to read heart rhythms. See the proof on the trace.</h1>
+<p style="margin:0;max-width:520px;font-size:19px">Every answer highlights the exact beats, gaps and intervals that make a rhythm what it is. The next exercises target the rhythms you keep mixing up.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<a class="btn btn-red" href="#join">Get early access</a>
+<a href="#how" style="color:var(--fg);font-weight:600;padding:14px 8px">See how it works</a>
+</div>
+</div>
+
+<div class="col card">
+<div class="cardhead"><span>Trace of the day</span><span>Illustration</span></div>
+<svg viewBox="0 0 400 100" width="100%" role="img" aria-label="Irregularly spaced narrow beats with no clear P waves, the pattern of atrial fibrillation" style="display:block">
+<path d="M0,60 l8,-2 l8,3 l8,-3 l8,2 l8,-2 L58,60 L62,66 L66,12 L70,74 L74,60 l8,2 l8,-3 l8,2 l8,-2 l8,3 L110,60 L114,66 L118,12 L122,74 L126,60 l8,-2 l8,3 L142,60 L146,66 L150,12 L154,74 L158,60 l8,-3 l8,2 l8,-2 l8,3 l8,-2 l8,2 l8,-3 L228,60 L232,66 L236,12 L240,74 L244,60 l8,2 l8,-3 l8,2 l8,-2 L282,60 L286,66 L290,12 L294,74 L298,60 l8,-2 l8,3 l8,-2 L322,60 L326,66 L330,12 L334,74 L338,60 l8,2 l8,-3 l8,2 l8,-2 l8,3 l8,-2 L400,60" fill="none" stroke="#1B1F2A" stroke-width="2" stroke-linejoin="round"/>
+<g stroke="#C8102E" stroke-width="1.5" fill="none">
+<path d="M66,92 L118,92 M66,88 V96 M118,88 V96"/>
+<path d="M118,92 L150,92 M150,88 V96"/>
+<path d="M150,92 L236,92 M236,88 V96"/>
+</g>
+<g fill="#C8102E" font-family="IBM Plex Mono,monospace" font-size="8" text-anchor="middle">
+<text x="92" y="84">52</text><text x="134" y="84">32</text><text x="193" y="84">86</text>
+</g>
+</svg>
+<div style="font-size:15px;line-height:1.45"><strong>Why it is atrial fibrillation:</strong> the gaps between beats (red) change from one to the next, and there is no steady P wave before each QRS.</div>
+</div>
+</div>
+</div>
+
+<div id="how" class="band">
+<div class="wrap section stack" style="gap:40px">
+<h2 style="max-width:640px">Three things most ECG apps do not do together</h2>
+<div class="row" style="gap:32px">
+<div class="col stack" style="gap:8px;flex-basis:280px"><div class="eyebrow">Practice</div><h3 style="font-size:22px">Name the rhythm</h3><p style="margin:0">Short exercises on real recorded traces from open research databases. Pick the rhythm, get the answer straight away.</p></div>
+<div class="col stack" style="gap:8px;flex-basis:280px"><div class="eyebrow">Understand</div><h3 style="font-size:22px">See the evidence</h3><p style="margin:0">The correction draws on the trace: beat intervals, missing P waves, wide QRS complexes. You learn what to look at, not just what to answer.</p></div>
+<div class="col stack" style="gap:8px;flex-basis:280px"><div class="eyebrow">Adapt</div><h3 style="font-size:22px">Train your weak pairs</h3><p style="margin:0">The app keeps a map of the rhythms you confuse, for example flutter taken for fibrillation, and serves those next.</p></div>
+</div>
+</div>
+</div>
+
+<div class="wrap section row" style="align-items:flex-start">
+<div class="col stack" style="gap:16px">
+<h2>Built to be read in your language</h2>
+<p style="margin:0">A rhythm looks the same in Lagos, Lyon, Lima and Lahore. Only the explanation changes, so the app launches in many languages at once. Each language is marked as reviewed by a health professional, or as beta until one has checked it.</p>
+</div>
+<div class="col" style="display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start">
+<span class="pill">English</span><span class="pill">Français</span><span class="pill">Español</span><span class="pill">Português</span><span class="pill">العربية</span>
+<span class="pill" style="border-style:dashed;border-color:#6B5A58;color:var(--muted);font-weight:400">More to come</span>
+</div>
+</div>
+
+<div id="join" class="join">
+<div class="wrap section row" style="align-items:center;justify-content:space-between;gap:32px">
+<div class="col stack" style="gap:12px;flex-basis:420px">
+<h2>Get early access</h2>
+<p style="margin:0;max-width:520px">Free starter pack for everyone on the list. Premium plan and price announced at launch, with a long free trial.</p>
+</div>
+<div class="col stack" style="gap:12px;max-width:440px;flex-basis:320px">
+<a class="btn btn-red" style="text-align:center" href="https://docs.google.com/forms/d/e/1FAIpQLSfODnV2NPyI8z85wjoRmBisX_ixHD5J7NOd88Uki0K8tpeH1Q/viewform" target="_blank" rel="noopener">Join the waitlist</a>
+</div>
+</div>
+</div>
+
+<div class="wrap">
+<footer>
+<div><strong>Educational tool.</strong> Not a medical device. Never use it to diagnose or treat a patient.</div>
+<div>Traces will come from open databases: the MIT-BIH Arrhythmia Database (Open Data Commons Attribution License) and PTB-XL (CC BY 4.0), both published on PhysioNet. The trace above is an illustration drawn for this page.</div>
+</footer>
+</div>
+
+</body>
+</html>
